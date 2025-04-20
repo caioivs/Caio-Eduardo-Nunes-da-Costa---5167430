@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0e6d2;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, #091428, #0a1428);
+    color: #c8aa6e;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.team-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0a1428;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c8aa6e;
+    font-size: 1.8rem;
+}
+
+.team-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+h3 {
+    color: #c8aa6e;
+    margin: 25px 0 15px;
+    font-size: 1.4rem;
+}
+
+ul, ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.player-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.player-card {
+    background-color: #f8f5ee;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #c8aa6e;
+}
+
+.achievements {
+    background-color: #f0e6d2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+footer {
+    background: linear-gradient(to right, #091428, #0a1428);
+    color: #c8aa6e;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}

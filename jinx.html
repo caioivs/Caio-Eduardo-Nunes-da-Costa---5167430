@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/jinx.css">
+    <title>Jinx</title>
+</head>
+<body>
+    <!-- Efeitos de balas (adicionados via JavaScript) -->
+    <div id="bullet-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">JINX</h1>
+        <p class="subtitle">O Gatilho Desenfreado de Zaun</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="jinx-section">
+            <h2>Caos em Pessoa</h2>
+            <p>Jinx, uma criminosa perturbada e impulsiva de Zaun, vive para disseminar o caos sem se preocupar com as consequências. Armada com um arsenal de armas perigosas, ela detona as coisas mais barulhentas e cintilantes que puder inventar.</p>
+            <p>Com um total desprezo pela autoridade e uma paixão pela destruição, Jinx deixa um rastro de caos e pânico por onde passa. Suas armas favoritas incluem "Zap!", sua pistola de choques, e "Fisga!", seu lança-foguetes.</p>
+        </section>
+
+        <section id="habilidades" class="jinx-section">
+            <h2>Habilidades Explosivas</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Trocação</h3>
+                    <p class="ability-desc">Jinx modifica seus ataques básicos ao trocar entre Pow-Pow, sua metralhadora, e Fishbones, seu lança-foguetes.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Zap!</h3>
+                    <p class="ability-desc">Jinx usa sua pistola de choque para atirar um raio que causa dano e reduz a velocidade do primeiro inimigo atingido.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Chamas da Alegria</h3>
+                    <p class="ability-desc">Jinx lança uma fileira de granadas que causam dano e atordoam os inimigos por alguns segundos.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Super Mega Míssil da Morte</h3>
+                    <p class="ability-desc">Jinx dispara um super míssil que causa dano crescente com base na distância percorrida.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="jinx-section">
+            <h2>Galeria Explosiva</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./imagens/fragmnetada.jpg" alt="Jinx Splash Art">
+                    <div class="gallery-caption">Splash Fragmentada</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="Jinx Classic Skin">
+                    <div class="gallery-caption">Skin Clássica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/jinxguardin.jpg" alt="Jinx Star Guardian Skin">
+                    <div class="gallery-caption">Guardiã Estelar</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="jinx-section">
+            <h2>Curiosidades Bombásticas</h2>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Jinx foi inspirada no personagem Harley Quinn dos quadrinhos da DC</li>
+                <li>Seu tema musical "Get Jinxed" foi um grande sucesso na comunidade</li>
+                <li>Ela tem uma rivalidade intensa com Vi, sua irmã mais velha</li>
+                <li>Jinx apareceu no videoclipe "Enemy" da banda Imagine Dragons</li>
+                <li>Ela é a protagonista da série animada Arcane da Netflix</li>
+            </ul>
+            <p>Jinx representa o caos puro e a rebeldia juvenil, sendo uma das campeãs mais icônicas de League of Legends.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+    </footer>
+
+    <script>
+        // Efeito de balas aleatórias
+        document.addEventListener('DOMContentLoaded', function() {
+            const bulletContainer = document.getElementById('bullet-effects');
+            const colors = ['#ff4500', '#ff69b4', '#8b008b'];
+            
+            function createBullet() {
+                const bullet = document.createElement('div');
+                bullet.className = 'bullet';
+                bullet.style.left = Math.random() * 100 + 'vw';
+                bullet.style.top = Math.random() * 100 + 'vh';
+                bullet.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                bulletContainer.appendChild(bullet);
+                
+                // Remove a bala após a animação
+                setTimeout(() => {
+                    bullet.remove();
+                }, 2000);
+            }
+            
+            // Cria balas periodicamente
+            setInterval(createBullet, 500);
+            
+            // Efeito de digitação para o título
+            setTimeout(() => {
+                document.querySelector('h1').style.borderRight = 'none';
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

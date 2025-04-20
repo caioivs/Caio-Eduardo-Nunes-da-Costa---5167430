@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/kaisa.css">
+    <title>Kai'Sa</title>
+</head>
+<body>
+    <!-- Efeitos de partículas do Vazio (adicionados via JavaScript) -->
+    <div id="void-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">KAI'SA</h1>
+        <p class="subtitle">A Filha do Vazio</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="kaisa-section">
+            <h2>A Predadora Perfeita</h2>
+            <p>Kai'Sa, conhecida como a Filha do Vazio, é uma caçadora mortal que vive nas profundezas do Vazio. Capturada quando era apenas uma criança, ela conseguiu sobreviver através de pura força de vontade e habilidade, formando uma simbiose com um casulo do Vazio que agora cobre seu corpo.</p>
+            <p>Armada com uma armadura viva e armas biológicas, Kai'Sa caça as criaturas do Vazio que um dia a levaram, determinada a impedir que façam o mesmo com outros. Sua conexão única com o Vazio a torna tanto uma predadora quanto uma protetora.</p>
+        </section>
+
+        <section id="habilidades" class="kaisa-section">
+            <h2>Habilidades do Vazio</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Segunda Pele</h3>
+                    <p class="ability-desc">O traje simbiótico de Kai'Sa evolui à medida que ela adquire itens, concedendo efeitos adicionais quando atinge certos patamares de atributos.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Chuva Icathiana</h3>
+                    <p class="ability-desc">Kai'Sa dispara uma rajada de projéteis que causam dano adicional baseado no PV atual do alvo.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Exploradora do Vazio</h3>
+                    <p class="ability-desc">Kai'Sa dispara um projétil de plasma que causa dano e aplica Marcas de Plasma. Acumular Marcas causa dano adicional.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Surto</h3>
+                    <p class="ability-desc">Kai'Sa avança rapidamente em uma direção, ganhando um escudo temporário.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Chuva de Projéteis</h3>
+                    <p class="ability-desc">Kai'Sa salta para uma posição segura e dispara uma chuva de projéteis em inimigos próximos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="kaisa-section">
+            <h2>Galeria do Vazio</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./imagens/estrelanegra.jpg" alt="Kai'Sa Splash Art">
+                    <div class="gallery-caption">Estrela Negra</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg" alt="Kai'Sa Classic Skin">
+                    <div class="gallery-caption">Skin Clássica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/kaiskda.jpg" alt="Kai'Sa K/DA Skin">
+                    <div class="gallery-caption">K/DA</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="kaisa-section">
+            <h2>Curiosidades do Vazio</h2>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Kai'Sa é filha de Kassadin, outro campeão de League of Legends</li>
+                <li>Ela foi inspirada em personagens como Samus Aran (Metroid) e os Predadores</li>
+                <li>Seu traje simbiótico é na verdade uma criatura viva do Vazio</li>
+                <li>Kai'Sa foi um dos membros originais do grupo K/DA da Riot</li>
+                <li>Ela tem diálogos especiais com campeões relacionados ao Vazio</li>
+            </ul>
+            <p>Kai'Sa representa a dualidade entre a humanidade e o Vazio, sendo uma das caçadoras mais habilidosas de League of Legends.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+    </footer>
+
+    <script>
+        // Efeito de partículas do Vazio
+        document.addEventListener('DOMContentLoaded', function() {
+            const voidContainer = document.getElementById('void-effects');
+            const colors = ['#00bfff', '#9370db', '#4b0082'];
+            
+            function createVoidParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'void-particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDuration = (2 + Math.random() * 3) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                voidContainer.appendChild(particle);
+                
+                // Remove a partícula após a animação
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000);
+            }
+            
+            // Cria partículas periodicamente
+            for (let i = 0; i < 15; i++) {
+                createVoidParticle();
+            }
+            setInterval(createVoidParticle, 1000);
+            
+            // Efeito de digitação para o título
+            setTimeout(() => {
+                document.querySelector('h1').style.borderRight = 'none';
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ahri.css">
+    <title>Ahri</title>
+</head>
+<body>
+    <!-- Efeitos de orbes (adicionados via JavaScript) -->
+    <div id="orb-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">AHRI</h1>
+        <p class="subtitle">A Raposa de Nove Caudas</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="ahri-section">
+            <h2>A Encantadora</h2>
+            <p>Ahri é uma vastaya com traços de raposa, capaz de manipular magia para transformar as emoções de seus oponentes em energia. Originalmente uma raposa comum que ganhou consciência através da magia, ela agora busca entender sua verdadeira natureza enquanto vagueia pelo mundo em busca de memórias que possa consumir.</p>
+            <p>Com sua graça felina e habilidades mágicas, Ahri é uma campeã versátil que pode eliminar inimigos rapidamente com suas habilidades de dano em área e mobilidade excepcional. Sua essência mágica permite que ela roube a essência vital de seus inimigos para se curar.</p>
+        </section>
+
+        <section id="habilidades" class="ahri-section">
+            <h2>Magia das Raposas</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Fúria da Raposa</h3>
+                    <p class="ability-desc">A cada 9 habilidades ou ataques básicos, Ahri cura-se. Ao atingir 9 acúmulos, sua próxima habilidade também a cura por cada inimigo atingido.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Orbe da Ilusão</h3>
+                    <p class="ability-desc">Ahri lança e puxa de volta seu orbe, causando dano mágico na ida e dano verdadeiro na volta.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Fogo de Raposa</h3>
+                    <p class="ability-desc">Ahri libera três fogos de raposa que buscam inimigos próximos, causando dano mágico.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Encanto</h3>
+                    <p class="ability-desc">Ahri lança um beijo mágico que causa dano e faz um inimigo caminhar amorosamente em sua direção.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Ímpeto Espiritual</h3>
+                    <p class="ability-desc">Ahri avança e dispara orbes de essência em até 3 inimigos próximos, podendo ser conjurado até três vezes antes de entrar em Tempo de Recarga.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="ahri-section">
+            <h2>Galeria Encantadora</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./imagens/ahriflorescer.jpg" alt="Ahri Splash Art">
+                    <div class="gallery-caption">Splash Art Florescer</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg" alt="Ahri Classic Skin">
+                    <div class="gallery-caption">Skin Clássica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/ahri.webp" alt="Ahri K/DA Skin">
+                    <div class="gallery-caption">K/DA All Out</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="ahri-section">
+            <h2>Curiosidades Mágicas</h2>
+            <ul style="margin-left: 2rem; margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.8;">
+                <li>Ahri foi inspirada na lenda coreana da raposa de nove caudas (Gumiho)</li>
+                <li>Ela foi a primeira campeã a receber um Visual Update Completo (VGU)</li>
+                <li>Ahri é a líder do grupo virtual K/DA da Riot Games</li>
+                <li>Seu tema musical "POP/STARS" com K/DA teve mais de 500 milhões de visualizações</li>
+                <li>Ahri aparece no videoclipe "MORE" do grupo K/DA</li>
+            </ul>
+            <p>Ahri é uma das campeãs mais populares de League of Legends, conhecida por sua jogabilidade fluida e design icônico.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+    </footer>
+
+    <script>
+        // Efeito de orbes flutuantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const orbContainer = document.getElementById('orb-effects');
+            const colors = ['#ff69b4', '#8a2be2', '#ffffff'];
+            
+            function createOrb() {
+                const orb = document.createElement('div');
+                orb.className = 'fox-orb';
+                orb.style.left = Math.random() * 100 + 'vw';
+                orb.style.top = (window.innerHeight + 50) + 'px';
+                orb.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                orb.style.animationDuration = (3 + Math.random() * 4) + 's';
+                orb.style.animationDelay = Math.random() * 2 + 's';
+                orbContainer.appendChild(orb);
+                
+                // Remove o orb após a animação
+                setTimeout(() => {
+                    orb.remove();
+                }, 5000);
+            }
+            
+            // Cria orbes periodicamente
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createOrb, i * 300);
+            }
+            setInterval(createOrb, 1000);
+        });
+    </script>
+</body>
+</html>

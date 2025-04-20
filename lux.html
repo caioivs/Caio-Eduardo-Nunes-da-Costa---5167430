@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/lux.css">
+    <title>League of Legends</title>
+</head>
+<body>
+    <!-- Efeitos de partículas de luz (adicionados via JavaScript) -->
+    <div id="light-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">LUX</h1>
+        <p class="subtitle">A Dama da Luz</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="lux-section">
+            <h2>Iluminando o Caminho</h2>
+            <p>Luxanna Crownguard, conhecida como Lux, é uma maga poderosa que manipula a luz para moldá-la em poderosos ataques. Nascida em Demacia, um reino que teme e reprime habilidades mágicas, Lux foi forçada a manter seus poderes em segredo para proteger sua família e sua posição na alta sociedade.</p>
+            <p>Apesar das restrições de seu reino, Lux acredita que sua magia pode ser uma força para o bem. Com seu cetro e habilidades únicas, ela luta para provar que a magia pode ser usada para iluminar e proteger, não apenas para destruir.</p>
+        </section>
+
+        <section id="habilidades" class="lux-section">
+            <h2>Habilidades Luminosas</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Iluminação</h3>
+                    <p class="ability-desc">Os ataques e habilidades de Lux aplicam Iluminação, causando dano adicional com seu próximo ataque básico.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Luz Ligadora</h3>
+                    <p class="ability-desc">Lux lança uma esfera de luz que causa dano e reduz a velocidade dos inimigos. Pode ser detonada para causar dano em área.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Prisma Protetor</h3>
+                    <p class="ability-desc">Lux lança um prisma que protege aliados e pode ser redirecionado uma vez para proteger outros aliados.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Singularidade Luminosa</h3>
+                    <p class="ability-desc">Lux cria uma área de luz que reduz a velocidade dos inimigos. Após um tempo, explode causando dano.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Rajada Final</h3>
+                    <p class="ability-desc">Lux canaliza energia pura para disparar um poderoso raio de luz que causa dano massivo a todos os inimigos em linha.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="lux-section">
+            <h2>Galeria Luminosa</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./imagens/luxelementalista.jpg" alt="Lux Classic Skin">
+                    <div class="gallery-caption">Elementalista</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/lux.jpg" alt="Lux Elementalist Skin">
+                    <div class="gallery-caption">Skin Classica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/soufighter.jpg" alt="Lux Star Guardian Skin">
+                    <div class="gallery-caption">Soul Fighter</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="lux-section">
+            <h2>Curiosidades Brilhantes</h2>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Lux é irmã mais nova de Garen, outro campeão de League of Legends</li>
+                <li>Ela é prima de Ezreal, com quem tem diálogos especiais no jogo</li>
+                <li>Sua skin Elementalista tem 10 formas diferentes, uma para cada elemento</li>
+                <li>Lux foi um dos primeiros campeões a receber um rework visual completo</li>
+                <li>Ela aparece em várias histórias do universo de Runeterra</li>
+            </ul>
+            <p>Lux é um dos campeões mais populares de League of Legends, conhecida por sua jogabilidade satisfatória e personalidade carismática.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+
+    </footer>
+
+    <script>
+        // Efeito de partículas de luz
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightContainer = document.getElementById('light-effects');
+            const colors = ['#64c8ff', '#ffffff', '#0066cc'];
+            
+            function createLightSpark() {
+                const spark = document.createElement('div');
+                spark.className = 'light-spark';
+                spark.style.left = Math.random() * 100 + 'vw';
+                spark.style.top = Math.random() * 100 + 'vh';
+                spark.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                spark.style.animationDuration = (2 + Math.random() * 3) + 's';
+                spark.style.animationDelay = Math.random() * 2 + 's';
+                lightContainer.appendChild(spark);
+                
+                // Remove a partícula após a animação
+                setTimeout(() => {
+                    spark.remove();
+                }, 5000);
+            }
+            
+            // Cria partículas periodicamente
+            for (let i = 0; i < 15; i++) {
+                createLightSpark();
+            }
+            setInterval(createLightSpark, 1000);
+            
+            // Efeito de digitação para o título
+            setTimeout(() => {
+                document.querySelector('h1').style.borderRight = 'none';
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ezreal.css">
+    <title>League of Legends</title>
+</head>
+<body>
+    <!-- Efeitos de tiros arcano (adicionados via JavaScript) -->
+    <div id="arcane-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">EZREAL</h1>
+        <p class="subtitle">O Explorador Pródigo</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="ezreal-section">
+            <h2>Aventureiro Arcano</h2>
+            <p>Ezreal é um aventureiro arrojado, com um talento nato para as artes arcanas. Armado com sua luva shurimane, ele pode manipular energia mágica para se teleportar e desencadear poderosos ataques à distância.</p>
+            <p>Nascido em uma família de ricos exploradores, Ezreal cresceu fascinado por histórias de relíquias perdidas e civilizações antigas. Sua curiosidade insaciável e habilidades mágicas o levaram a se tornar um dos maiores exploradores de Runeterra.</p>
+        </section>
+
+        <section id="habilidades" class="ezreal-section">
+            <h2>Habilidades Mágicas</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Poder do Ascendente</h3>
+                    <p class="ability-desc">Os ataques básicos de Ezreal reduzem o Tempo de Recarga de todas as suas habilidades em 1,5 segundos ao acertar um alvo.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Disparo Místico</h3>
+                    <p class="ability-desc">Ezreal dispara um projétil de energia que causa dano físico ao primeiro inimigo atingido. Se acertar, reduz o Tempo de Recarga de todas as suas habilidades.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Fluxo Essencial</h3>
+                    <p class="ability-desc">Ezreal dispara uma onda de energia que causa dano mágico e reduz a velocidade de todos os inimigos atingidos.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Salto Arcano</h3>
+                    <p class="ability-desc">Ezreal teleporta-se para um local-alvo e dispara um projétil que causa dano ao inimigo mais próximo.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Barragem Incendiária</h3>
+                    <p class="ability-desc">Ezreal canaliza energia para disparar um poderoso projétil global que causa dano mágico a todos os inimigos em sua trajetória.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="ezreal-section">
+            <h2>Galeria do Explorador</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg" alt="Ezreal Classic Skin">
+                    <div class="gallery-caption">Skin Clássica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_5.jpg" alt="Ezreal Pulsefire Skin">
+                    <div class="gallery-caption">Pulsefire</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_6.jpg" alt="Ezreal SSG Skin">
+                    <div class="gallery-caption">T1</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="ezreal-section">
+            <h2>Curiosidades Arcanas</h2>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Ezreal é um dos campeões mais antigos de League of Legends, lançado em 2010</li>
+                <li>Ele é conhecido por sua frase icônica: "Você pertence a um museu!"</li>
+                <li>Ezreal teve um Visual Update Completo (VGU) em 2018</li>
+                <li>Ele é primo de Lux, outra campeã do jogo</li>
+                <li>Ezreal aparece em várias histórias do universo de Runeterra</li>
+            </ul>
+            <p>Ezreal é um dos campeões mais populares de League of Legends, conhecido por sua jogabilidade dinâmica e personalidade carismática.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+
+    </footer>
+
+    <script>
+        // Efeito de tiros arcanos
+        document.addEventListener('DOMContentLoaded', function() {
+            const arcaneContainer = document.getElementById('arcane-effects');
+            const colors = ['#00bfff', '#ffd700', '#0066cc'];
+            
+            function createArcaneShot() {
+                const shot = document.createElement('div');
+                shot.className = 'arcane-shot';
+                shot.style.left = Math.random() * 100 + 'vw';
+                shot.style.top = Math.random() * 100 + 'vh';
+                shot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                arcaneContainer.appendChild(shot);
+                
+                // Remove o tiro após a animação
+                setTimeout(() => {
+                    shot.remove();
+                }, 2000);
+            }
+            
+            // Cria tiros periodicamente
+            setInterval(createArcaneShot, 500);
+            
+            // Efeito de digitação para o título
+            setTimeout(() => {
+                document.querySelector('h1').style.borderRight = 'none';
+            }, 3500);
+        });
+    </script>
+</body>
+</html>
