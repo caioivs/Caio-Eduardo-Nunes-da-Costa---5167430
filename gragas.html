@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/gragas.css">
+    <title>Gragas</title>
+</head>
+<body>
+    <!-- Efeitos de bolhas de cerveja -->
+    <div id="beer-effects"></div>
+
+    <header>
+        <h1 class="typing-effect">GRAGAS</h1>
+        <p class="subtitle">O Rabugento</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="gragas-section">
+            <h2>O Mestre da Cerveja</h2>
+            <p>Gragas é um gigante amoroso e corpulento que adora duas coisas acima de todas as outras: beber e lutar (não necessariamente nessa ordem). Armado com seu barril de cerveja e sua força descomunal, ele derruba inimigos com uma combinação de poder bruto e magia alcoólica.</p>
+            <p>Nascido nas duras terras da Freljord, Gragas perambula de taverna em taverna, sempre em busca da próxima bebida perfeita e da próxima grande briga. Apesar de sua aparência desleixada, ele é um mestre cervejeiro com conhecimentos ancestrais sobre fermentação e destilação.</p>
+        </section>
+
+        <section id="habilidades" class="gragas-section">
+            <h2>Habilidades Alcoólicas</h2>
+            <div class="abilities">
+                <div class="ability-card">
+                    <h3 class="ability-title">Happy Hour (Passiva)</h3>
+                    <p class="ability-desc">Quando Gragas lança uma habilidade, ele se recupera por 6% de sua vida máxima ao longo de 4 segundos. Este efeito tem um tempo de recarga de 8 segundos.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Barril Explosivo (Q)</h3>
+                    <p class="ability-desc">Gragas arremessa seu barril em um local, causando dano e reduzindo a velocidade dos inimigos. O barril pode ser detonado novamente ou explodirá sozinho após 4 segundos.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Embriaguez (W)</h3>
+                    <p class="ability-desc">Gragas toma um gole de sua bebida, ficando desacelerado, mas recebendo redução de dano. No próximo ataque básico, ele causa dano adicional em uma área.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Corpo a Corpo (E)</h3>
+                    <p class="ability-desc">Gragas avança e colide com um inimigo, causando dano a todos os inimigos próximos e atordoando-os. Se colidir com uma unidade, o tempo de recarga é reduzido.</p>
+                </div>
+                <div class="ability-card">
+                    <h3 class="ability-title">Barril Explosivo (R)</h3>
+                    <p class="ability-desc">Gragas arremessa seu barril explosivo em uma área, causando dano e arremessando inimigos para longe do local da explosão.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="gragas-section">
+            <h2>Galeria do Bebum</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg" alt="Gragas Classic Skin">
+                    <div class="gallery-caption">Skin Clássica</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_1.jpg" alt="Gragas Scuba Skin">
+                    <div class="gallery-caption">Scuba</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_6.jpg" alt="Gragas Oktoberfest Skin">
+                    <div class="gallery-caption">Oktoberfest</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="gragas-section">
+            <h2>Curiosidades Alcoólicas</h2>
+            <ul>
+                <li>Gragas foi lançado em 2010 e é um dos campeões mais icônicos do jogo</li>
+                <li>Ele é conhecido por sua frase "Beba comigo!" e risada característica</li>
+                <li>Gragas já teve várias reworks em suas habilidades ao longo dos anos</li>
+                <li>Sua skin Oktoberfest é uma homenagem ao festival alemão de cerveja</li>
+                <li>Apesar de ser da Freljord, Gragas pode ser encontrado em tavernas por todo Runeterra</li>
+            </ul>
+            <p>Gragas é um campeão versátil que pode ser jogado em várias posições, conhecido por seu engajamento poderoso e sustain em combate.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">League of Legends &copy; 2023 Riot Games, Inc.</p>
+        <p class="footer-text">Página criada por fã - Não afiliada à Riot Games</p>
+    </footer>
+
+    <script>
+        // Efeito de bolhas de cerveja
+        document.addEventListener('DOMContentLoaded', function() {
+            const beerContainer = document.getElementById('beer-effects');
+            
+            function createBeerBubble() {
+                const bubble = document.createElement('div');
+                bubble.className = 'beer-bubble';
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.width = (Math.random() * 10 + 5) + 'px';
+                bubble.style.height = bubble.style.width;
+                bubble.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                beerContainer.appendChild(bubble);
+                
+                // Remove a bolha após a animação
+                setTimeout(() => {
+                    bubble.remove();
+                }, 5000);
+            }
+            
+            // Cria bolhas periodicamente
+            setInterval(createBeerBubble, 300);
+            
+            // Efeito de digitação para o título
+            setTimeout(() => {
+                document.querySelector('h1').style.borderRight = 'none';
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

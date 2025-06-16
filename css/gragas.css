@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #f0e6d2;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Efeitos de Cerveja (substitui os tiros arcanos) */
+#beer-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.beer-bubble {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #f8d56b;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float-up 4s linear infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) translateX(20px);
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9)), 
+                url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #f8d56b;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border-right: 3px solid #f8d56b;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #f8d56b; }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #cdbe91;
+    font-style: italic;
+}
+
+/* Navegação */
+nav {
+    background-color: #121212;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #f8d56b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: #f8d56b33;
+}
+
+/* Seções */
+.gragas-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgba(30, 35, 40, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gragas-section h2 {
+    color: #f8d56b;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    border-bottom: 2px solid #785a28;
+    padding-bottom: 0.5rem;
+}
+
+.gragas-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Habilidades */
+.abilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.ability-card {
+    background: linear-gradient(to bottom right, #1e2328, #2a3a45);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #f8d56b;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(248, 213, 107, 0.2);
+}
+
+.ability-title {
+    color: #f8d56b;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.ability-desc {
+    color: #cdbe91;
+    font-size: 0.95rem;
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #f8d56b;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Lista de curiosidades */
+ul {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #cdbe91;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-text {
+    color: #cdbe91;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .gragas-section {
+        padding: 1.5rem;
+    }
+}
